@@ -47,8 +47,8 @@
                                 <div style="height: 1px;" class="main_nav navbar-collapse navbar-ex1-collapse collapse">
                                     <ul class="navigation menu">
                                         <li><a href="#to_the_top">Acceuil</a></li>
-                                        <li><a href="index.php?page=test">Services</a></li>
-                                        <li><a href="index.php?page=test">Ajouter des mots au jeu<i class="icon-external-link"></i></a></li>
+                                        <li><a href="index.php?page=generateXML&name=doorgame_1">Services</a></li>
+                                        <li><a href="index.php?page=addWord">Ajouter des mots au jeu<i class="icon-external-link"></i></a></li>
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
                             </div>
