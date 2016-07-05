@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+if(isset($_GET["beConnect"], $_POST["user"], $_POST["pass"])) 
+{
+    $_SESSION["user"] = $_POST["user"];
+    $_SESSION["pass"] = sha1($_POST["pass"]);
+    header("Location: index.php?page=admin&actionSuccess");
+} 
+
+if(isset($_SESSION["user"], $_SESSION["pass"]))
+{
+    if($_SESSION["user"] == USER_ADMIN && $_SESSION["pass"] == PASS_ADMIN) $admin = true;
+    else $admin = false;
+}
+else $admin = false;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +27,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>OrthoCité | Ajouter des mots</title>
+    <title>OrthoCité | DashBoard Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="addWord/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -58,7 +76,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php?page=addWord">OrthoCité | Ajouter des mots / Voir</a>
+                <a class="navbar-brand" href="index.php?page=addWord">OrthoCité | DashBoard Admin</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -72,7 +90,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.php?page=addWord"><i class="fa fa-plus fa-fw"></i> Ajouter Des Mots / Voir</a>
+                            <a href="index.php?page=admin"><i class="fa fa-dashboard fa-fw"></i> DashBoard Admin</a>
                         </li>  
                         <li>
                             <a href="index.php"><i class="fa fa-home fa-fw"></i> Retour à l'accueil</a>
@@ -87,7 +105,7 @@
     <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Ajouter des mots / Voir</h1>
+                    <h1 class="page-header">DashBoard Admin</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -141,56 +159,44 @@
             
             <?php 
                 if(isset($_GET["actionSuccess"])) echo '<div class="col-lg-12"><div class="row"><div class="alert alert-success">
-                                <center>Mot(s) ajouté(s).</center>
+                                <center>Action Effectuée.</center>
                             </div></div></div>';
 
-                if(isset($_GET["action"]))
+                if($admin)
                 {
-                    if($_GET["action"] == "addInTheGame" && isset($_GET["name"])) printFormForAddInGame($_GET["name"]);
-                    else if($_GET["action"] == "addInGamePost" && isset($_GET["name"])) 
+                    if(isset($_GET["action"]))
                     {
-                        $name = htmlspecialchars($_GET["name"]);
 
-                        switch ($name) 
-                        {
-                            case 'doorgame':
-                            if(isset($_POST["district"], $_POST["porte"], $_POST["word_valid"], $_POST["word_invalid_1"], $_POST["word_invalid_2"])) addInDoorGame($_POST["district"], $_POST["porte"], $_POST["word_valid"], $_POST["word_invalid_1"], $_POST["word_invalid_2"]);
-                            else redirectAddWord();
-                                break;
-                            case 'platformer':
-                            if(isset($_POST["district"], $_POST["word_valid"], $_POST["word_invalid_1"], $_POST["word_invalid_2"], $_POST["word_invalid_3"], $_POST["word_invalid_4"])) addInPlatformer($_POST["district"], $_POST["word_valid"], $_POST["word_invalid_1"], $_POST["word_invalid_2"], $_POST["word_invalid_3"], $_POST["word_invalid_4"]);
-                            else redirectAddWord();
-                                break;
-                            case 'rearranger':
-                            if(isset($_POST["district"], $_POST["word"])) addInRearranger($_POST["district"], $_POST["word"]);
-                            else redirectAddWord();
-                                break;
-                            case 'guessgame':
-                            if(isset($_POST["word"], $_POST["validornot"])) addInGuessGame($_POST["word"], $_POST["validornot"]);
-                            else redirectAddWord();
-                                break;
-                            case 'stopgame':
-                            if(isset($_POST["word_invalid"], $_POST["term_word_invalid"], $_POST["word_valid_1"], $_POST["term_word_valid_1"], $_POST["word_valid_2"], $_POST["term_word_valid_2"], $_POST["word_valid_3"], $_POST["term_word_valid_3"])) addInStopGame($_POST["word_invalid"], $_POST["term_word_invalid"], $_POST["word_valid_1"], $_POST["term_word_valid_1"], $_POST["word_valid_2"], $_POST["term_word_valid_2"], $_POST["word_valid_3"], $_POST["term_word_valid_3"]);
-                            else redirectAddWord();
-                                break;
-                            case 'throwgame':
-                            if(isset($_POST["word"], $_POST["validornot"])) addInThrowGame($_POST["word"], $_POST["validornot"]);
-                            else redirectAddWord();
-                                break;
-                            case 'superboss':
-                            if(isset($_POST["word"])) addInSuperBoss($_POST["word"]);
-                            else redirectAddWord();
-                                break;
-                        }
                     }
-                    else if($_GET["action"] == "viewWord" && isset($_GET["name"], $_GET["valid"])) lookWords($_GET["name"], $_GET["valid"], $difXmlGame);
-                    else echo '<SCRIPT LANGUAGE="JavaScript">
-                                document.location.href="index.php?page=addWord"
-                                </SCRIPT>';
+                    else printDifferentGame($difXmlGame);
                 }
-                else printDifferentGame($difXmlGame);
-
-
+                else 
+                {
+                    echo '<div class="row">
+                            <div class="col-md-4 col-md-offset-4">
+                                <div class="login-panel panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Connectez Vous</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <form role="form" action="index.php?page=admin&beConnect" method="POST">
+                                            <fieldset>
+                                                <div class="form-group">
+                                                    <input class="form-control" placeholder="User" name="user" type="text" autofocus="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input class="form-control" placeholder="Password" name="pass" type="password" value="">
+                                                </div>
+                                                <!-- Change this to a button or input when using this as a form -->
+                                                <input type="submit" class="btn btn-lg btn-success btn-block" value="Se connecter">
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+                }
+                
 
                 for ($i=0; $i < 25; $i++) 
                 { 

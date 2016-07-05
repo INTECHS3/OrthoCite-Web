@@ -8,6 +8,7 @@ require_once("control/main_control.php");
 if(isset($_GET["page"]))
 {
 	if($_GET["page"] == "addWord") require_once("addWord/addword.php");
+	else if($_GET["page"] == "admin") require_once("addWord/admin/admin.php");
 	else header('Location: index.php');  
 }
 else 
