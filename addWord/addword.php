@@ -75,6 +75,9 @@
                             <a href="index.php?page=addWord"><i class="fa fa-plus fa-fw"></i> Ajouter Des Mots / Voir</a>
                         </li>  
                         <li>
+                            <a href="./admin"><i class="fa fa-dashboard fa-fw"></i> Espace Admin </a>
+                        </li>  
+                        <li>
                             <a href="index.php"><i class="fa fa-home fa-fw"></i> Retour à l'accueil</a>
                         </li>                      
                     </ul>

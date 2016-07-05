@@ -977,3 +977,128 @@ function lookWords($name, $valid, $difXmlGame)
                 <!-- /.col-lg-12 -->
             </div>';
 }
+
+
+function selectAllTable()
+{
+    return ConnectBdd()->query("SHOW TABLES");
+}
+
+function selectOneTable($name)
+{
+    try
+    {
+        $req = ConnectBdd()->query("SELECT * FROM ".$name."");
+        return $req;
+    }
+    catch(Exception $e)
+    {
+        return array('Error' => $e);
+    }
+}
+
+function describeOneTable($name)
+{
+    try
+    {
+        $req = ConnectBdd()->query("DESCRIBE ".$name."");
+        return $req;
+    }
+    catch(Exception $e)
+    {
+        return array('Error' => $e);
+    }
+}
+
+function deleteOneRowFromTable($name, $id)
+{
+    try
+    {
+        $req = ConnectBdd()->prepare("DELETE FROM ".$name." WHERE id = :id");
+        $req->execute(array("id" => $id));
+        return $req;
+    }
+    catch(Exception $e)
+    {
+        return array('Error' => $e);
+    }
+}
+
+function execute($cmd)
+{
+    try
+    {
+        ConnectBdd()->query($cmd);
+        return true;
+    }
+    catch(Exception $e)
+    {
+        return false;
+    }
+}
+
+function selectIdFromTable($name, $id)
+{
+    try
+    {
+        $req = ConnectBdd()->prepare("SELECT * FROM ".$name." WHERE id = :id");
+        $req->execute(array("id" => $id));
+        return $req->fetch();
+    }
+    catch(Exception $e)
+    {
+        return array('Error' => $e);
+    }
+}
+
+function TratementOfDeleteOneRowFromTable($name, $id)
+{
+    deleteOneRowFromTable($name, $id);
+    echo '<SCRIPT LANGUAGE="JavaScript">
+                document.location.href="index.php?page=ViewTable&name='.$name.'&success"
+            </SCRIPT>';
+}
+
+function TratementAddRowSql($name, $array)
+{
+    $req = "INSERT INTO ".$name;
+
+    $q = describeOneTable($name);
+    while($query = $q->fetch())
+    {
+        if($query["Field"] == "id") $req=$req."(";
+        else $req = $req.$query["Field"].",";
+    }
+    $req = substr($req, 0, -1);
+    $req = $req.") VALUES(";
+    
+    for ($i=0; $i < count($array); $i++) 
+    { 
+        $req = $req."\"".$array[$i]."\",";
+    }
+    $req = substr($req, 0, -1);
+    $req = $req.")";
+    
+    
+    if(execute($req)) echo '<SCRIPT LANGUAGE="JavaScript">document.location.href="index.php?page=ViewTable&name='.$name.'&success"</SCRIPT>';
+    else echo '<SCRIPT LANGUAGE="JavaScript">document.location.href="index.php?page=ViewTable&name='.$name.'"</SCRIPT>';
+}
+
+function TratementOfUpdateOneRowFromTable($name, $id, $array)
+{
+
+    $req = "UPDATE ".$name." SET ";
+
+    $q = describeOneTable($name);
+    $e = 0;
+    while($query = $q->fetch())
+    {
+        if($query["Field"] != "id") $req = $req.$query["Field"]." = \"".$array[$e++]."\",";
+    }
+    $req = substr($req, 0, -1);
+    $req = $req." WHERE id = ".$id;
+
+    if(execute($req)) echo '<SCRIPT LANGUAGE="JavaScript">document.location.href="index.php?page=ViewTable&name='.$name.'&success"</SCRIPT>';
+    else echo '<SCRIPT LANGUAGE="JavaScript">document.location.href="index.php?page=ViewTable&name='.$name.'"</SCRIPT>';
+
+}
