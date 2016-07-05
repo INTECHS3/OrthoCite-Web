@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 04 Juillet 2016 à 23:09
+-- Généré le :  Mar 05 Juillet 2016 à 03:38
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -105,10 +105,14 @@ CREATE TABLE IF NOT EXISTS `rearranger` (
 
 CREATE TABLE IF NOT EXISTS `stopgame` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `groupe` int(11) NOT NULL,
-  `word` varchar(40) NOT NULL,
-  `term` varchar(40) NOT NULL,
-  `validornot` int(11) NOT NULL,
+  `word_invalid` varchar(40) NOT NULL,
+  `term_word_invalid` varchar(40) NOT NULL,
+  `word_valid_1` varchar(40) NOT NULL,
+  `term_word_valid_1` varchar(40) NOT NULL,
+  `word_valid_2` varchar(40) NOT NULL,
+  `term_word_valid_2` varchar(40) NOT NULL,
+  `word_valid_3` varchar(40) NOT NULL,
+  `term_word_valid_3` varchar(40) NOT NULL,
   `valid` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
