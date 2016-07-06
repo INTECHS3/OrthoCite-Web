@@ -105,6 +105,277 @@ function doorGame()
 
 }
 
+function doorGame2()
+{
+    $req = ConnectBdd()->query("SELECT * FROM doorgame_2 WHERE valid = 1");
+    $dom = new DomDocument("1.0", "UTF-8");
+    $sentence = array();
+    $count = 0;
+    $dictionary = $dom->createElement('dictionary');
+    $district1 = $dom->createElement('district');
+    $district1->setAttribute('id', '1');
+    $dictionary->appendChild($district1);
+    $district2 = $dom->createElement('district');
+    $district2->setAttribute('id', '2');
+    $dictionary->appendChild($district2);
+    $district3 = $dom->createElement('district');
+    $district3->setAttribute('id', '3');
+    $dictionary->appendChild($district3);
+    $district4 = $dom->createElement('district');
+    $district4->setAttribute('id', '4');
+    $dictionary->appendChild($district4);
+    $dom->appendChild( $dictionary );
+    while($data = $req->fetch())
+    {
+        if($data['district'] == 1)
+        {
+        $sentence[$count] = $dom->createElement('sentence');
+        $district1->appendChild($sentence[$count]);
+        $sentence[$count]->appendChild($dom->createElement('valid', $data['word_valid']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid']));
+        }
+        else if($data['district'] == 2)
+        {
+            $sentence[$count] = $dom->createElement('sentence');
+        $district2->appendChild($sentence[$count]);
+        $sentence[$count]->appendChild($dom->createElement('valid', $data['word_valid']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid']));
+        }
+        else if($data['district'] == 3)
+        {
+            $sentence[$count] = $dom->createElement('sentence');
+        $district3->appendChild($sentence[$count]);
+        $sentence[$count]->appendChild($dom->createElement('valid', $data['word_valid']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid']));
+        }
+        else if($data['district'] == 4)
+        {
+            $sentence[$count] = $dom->createElement('sentence');
+        $district4->appendChild($sentence[$count]);
+        $sentence[$count]->appendChild($dom->createElement('valid', $data['word_valid']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid']));
+        }
+        
+        $count++;
+    }
+}
+
+function guessGame()
+{
+    $req = ConnectBdd()->query("SELECT * FROM guessgame WHERE valid = 1");
+    $dom = new DomDocument("1.0", "UTF-8");
+    $sentence = array();
+    $count = 0;
+    $dictionary = $dom->createElement('dictionary');
+    $dom->appendChild( $dictionary );
+    while($data = $req->fetch())
+    {
+        $sentence[$count] = $dom->createElement('sentence');
+        if($data['validornot'] == 0)
+        {
+            $sentence[$count]->appendChild($dom->createElement('invalid', $data['word']));
+        }
+        else
+        {
+            $sentence[$count]->appendChild($dom->createElement('valid', $data['word']));
+        }
+        $count++;
+    }
+}
+
+function platformer()
+{
+    $req = ConnectBdd()->query("SELECT * FROM platformer WHERE valid = 1");
+    $dom = new DomDocument("1.0", "UTF-8");
+    $sentence = array();
+    $count = 0;
+    $dictionary = $dom->createElement('dictionary');
+    $dom->appendChild( $dictionary );
+    $district1 = $dom->createElement('district');
+    $district1->setAttribute('id', '1');
+    $dictionary->appendChild($district1);
+    $district2 = $dom->createElement('district');
+    $district2->setAttribute('id', '2');
+    $dictionary->appendChild($district2);
+    $district3 = $dom->createElement('district');
+    $district3->setAttribute('id', '3');
+    $dictionary->appendChild($district3);
+    $district4 = $dom->createElement('district');
+    $district4->setAttribute('id', '4');
+    $dictionary->appendChild($district4);
+    while($data = $req->fetch())
+    {
+        if($data['district'] == 1)
+        {
+        $sentence[$count] = $dom->createElement('sentence');
+        $district1->appendChild($sentence[$count]);
+        $sentence[$count]->appendChild($dom->createElement('valid', $data['word_valid']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_1']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_2']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_3']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_4']));
+        }
+        else if($data['district'] == 2)
+        {
+            $sentence[$count] = $dom->createElement('sentence');
+        $district2->appendChild($sentence[$count]);
+        $sentence[$count]->appendChild($dom->createElement('valid', $data['word_valid']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_1']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_2']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_3']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_4']));
+        }
+        else if($data['district'] == 3)
+        {
+            $sentence[$count] = $dom->createElement('sentence');
+        $district3->appendChild($sentence[$count]);
+        $sentence[$count]->appendChild($dom->createElement('valid', $data['word_valid']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_1']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_2']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_3']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_4']));
+        }
+        else if($data['district'] == 4)
+        {
+            $sentence[$count] = $dom->createElement('sentence');
+        $district4->appendChild($sentence[$count]);
+        $sentence[$count]->appendChild($dom->createElement('valid', $data['word_valid']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_1']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_2']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_3']));
+        $sentence[$count]->appendChild($dom->createElement('invalid', $data['word_invalid_4']));
+        }
+        
+        $count++;
+    }
+}
+
+function rearranger()
+{
+    $req = ConnectBdd()->query("SELECT * FROM rearranger WHERE valid = 1");
+    $dom = new DomDocument("1.0", "UTF-8");
+    $sentence = array();
+    $count = 0;
+    $dictionary = $dom->createElement('dictionary');
+    $district1 = $dom->createElement('district');
+    $district1->setAttribute('id', '1');
+    $dictionary->appendChild($district1);
+    $district2 = $dom->createElement('district');
+    $district2->setAttribute('id', '2');
+    $dictionary->appendChild($district2);
+    $district3 = $dom->createElement('district');
+    $district3->setAttribute('id', '3');
+    $dictionary->appendChild($district3);
+    $district4 = $dom->createElement('district');
+    $district4->setAttribute('id', '4');
+    $dictionary->appendChild($district4);
+    $dom->appendChild( $dictionary );
+    while($data = $req->fetch())
+    {
+        if($data['district'] == 1)
+        {
+        $sentence[$count] = $dom->createElement('sentence');
+        $district1->appendChild($sentence[$count]);
+        $sentence[$count]->appendChild($dom->createElement('valid', $data['word']));
+        
+        }
+        else if($data['district'] == 2)
+        {
+            $sentence[$count] = $dom->createElement('sentence');
+        $district2->appendChild($sentence[$count]);
+        $sentence[$count]->appendChild($dom->createElement('valid', $data['word']));
+        }
+        else if($data['district'] == 3)
+        {
+            $sentence[$count] = $dom->createElement('sentence');
+        $district3->appendChild($sentence[$count]);
+        $sentence[$count]->appendChild($dom->createElement('valid', $data['word']));
+        }
+        else if($data['district'] == 4)
+        {
+            $sentence[$count] = $dom->createElement('sentence');
+        $district4->appendChild($sentence[$count]);
+        $sentence[$count]->appendChild($dom->createElement('valid', $data['word']));
+        }
+        
+        $count++;
+    }
+}
+
+function superboss()
+{
+$req = ConnectBdd()->query("SELECT * FROM superboss WHERE valid = 1");
+    $dom = new DomDocument("1.0", "UTF-8");
+    $sentence = array();
+    $dictionary = $dom->createElement('dictionary');
+    $dom->appendChild( $dictionary );
+    while($data = $req->fetch())
+    {
+        $dictionary->appendChild($dom->createElement('word', $data['word']));
+    }
+}
+
+function throwgame()
+{
+    $req = ConnectBdd()->query("SELECT * FROM throwgame WHERE valid = 1");
+    $dom = new DomDocument("1.0", "UTF-8");
+    $word = array();
+    $count = 0;
+    $dictionary = $dom->createElement('dictionary');
+    $dom->appendChild( $dictionary );
+    $district = $dom->createElement('district');
+    $dictionary->appendChild($district);
+    while($data = $req->fetch())
+    {
+        $word[$count] = $dom->createElement('word', $data['word']);
+        $word[$count]->setAttribute('typeWorld', $data['validornot']);
+        $district->appendChild($word[$count]);
+        $count++;
+    }
+}
+function stopgame()
+{
+     $req = ConnectBdd()->query("SELECT * FROM stopgame WHERE valid = 1");
+    $dom = new DomDocument("1.0", "UTF-8");
+    $wordInvalid = array();
+    $wordValid1 = array();
+    $wordValid2 = array();
+    $wordValid3 = array();
+    $group = array();
+    $count = 0;
+    $supp = 0;
+    $dictionary = $dom->createElement('dictionary');
+    $dom->appendChild( $dictionary );
+    $district = $dom->createElement('district');
+    $dictionary->appendChild($district);
+    while($data = $req->fetch())
+    {
+        $group[$count] = $dom->createElement('group');
+        $district->appendChild($group[$supp]);
+        $wordValid1[$count] = $dom->createElement('word', $data['word_valid_1']);
+        $wordValid1[$count]->setAttribute('typeWorld', 'true');
+        $wordValid1[$count]->setAttribute('term', $data['term_word_valid_1'])
+        $district->appendChild($wordValid1[$count]);
+
+        $wordValid2[$count] = $dom->createElement('word', $data['word_valid_2']);
+        $wordValid2[$count]->setAttribute('typeWorld', 'true');
+        $wordValid2[$count]->setAttribute('term', $data['term_word_valid_2'])
+        $district->appendChild($wordValid2[$count]);
+
+        $wordValid3[$count] = $dom->createElement('word', $data['word_valid_3']);
+        $wordValid3[$count]->setAttribute('typeWorld', 'true');
+        $wordValid3[$count]->setAttribute('term', $data['term_word_valid_3'])
+        $district->appendChild($wordValid3[$count]);
+
+        $wordInvalid[$count] = $dom->createElement('word', $data['word_invalid']);
+        $wordInvalid[$count]->setAttribute('typeWorld', 'true');
+        $wordInvalid[$count]->setAttribute('term', $data['term_word_invalid'])
+        $district->appendChild($wordInvalid[$count]);
+        $count++;
+
+    }
+}
+
 function printFormForAddInGame($name)
 {
     $name = htmlspecialchars($name);

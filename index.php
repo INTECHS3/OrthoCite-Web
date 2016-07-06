@@ -10,7 +10,7 @@ if(isset($_GET["page"]))
 {
 	if($_GET["page"] == "addWord") require_once("addWord/addword.php");
 
-	elseif($_GET["page"] == "generateXML")require_once("test.php");
+	elseif($_GET["page"] == "generateXML" && isset($_GET["name"]))require_once("test.php");
 
 	else header('Location: index.php');  
 }
