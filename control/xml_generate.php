@@ -1,5 +1,5 @@
 <?php
-header("Content-type: text/xml");
+header("Content-type: text/xml; charset=utf-8");
 switch ($_GET["name"]) 
 {
 	case 'doorgame_1':

@@ -49,6 +49,7 @@
                                         <li><a href="#to_the_top">Accueil</a></li>
                                         <li><a href="#main_center">Qu'est-ce que c'est ?</a></li>
                                         <li><a href="#main_bottom">Développeurs</a></li>
+                                        <li><a href="https://ci.appveyor.com/api/buildjobs/35va5vtl1xuqjlpf/artifacts/orthocite-v1.0.0-x86-setup.exe">Télécharger</a></li>
                                         <li><a href="index.php?page=addWord">Ajouter des mots au jeu<i class="icon-external-link"></i></a></li>
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
