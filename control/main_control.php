@@ -367,7 +367,6 @@ function stopgame()
     $wordValid3 = array();
     $group = array();
     $count = 0;
-    $supp = 0;
     $dictionary = $dom->createElement('dictionary');
     $dom->appendChild( $dictionary );
     $district = $dom->createElement('district');
@@ -375,7 +374,7 @@ function stopgame()
     while($data = $req->fetch())
     {
         $group[$count] = $dom->createElement('group');
-        $district->appendChild($group[$supp]);
+        $district->appendChild($group[$count]);
         $wordValid1[$count] = $dom->createElement('word', $data['word_valid_1']);
         $wordValid1[$count]->setAttribute('typeWorld', 'true');
         $wordValid1[$count]->setAttribute('term', $data['term_word_valid_1']);
