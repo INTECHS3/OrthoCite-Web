@@ -27,8 +27,8 @@ while ($query = $req->fetch())
         echo "<td>".$query[$e]."</td>";
     }
                                      
-    echo    '<td><a href="index.php?page=deleteOneRowFromTable&name='.$_GET["name"].'&id='.$query["id"].'"><button type="button" class="btn btn-danger">Delete</button></a>
-                 <a href="index.php?page=updateOneRowFromTableForm&name='.$_GET["name"].'&id='.$query["id"].'"><button type="button" class="btn btn-warning">Update</button></a></td></tr>';
+    echo    '<td><a href="index.php?page=deleteOneRowFromTable&name='.$_GET["name"].'&id='.$query["id"].'"><button type="button" class="btn btn-danger">Supprimer</button></a>
+                 <a href="index.php?page=updateOneRowFromTableForm&name='.$_GET["name"].'&id='.$query["id"].'"><button type="button" class="btn btn-warning">Mettre à jour</button></a></td></tr>';
 $i++;
 }
 
@@ -37,11 +37,11 @@ if($i == 0)
 {
     for ($e=0; $e < $a; $e++) 
     { 
-        if($e == 0) echo "<td>Aucune Ligne </td>";
+        if($e == 0) echo "<td>Aucune ligne</td>";
         else echo "<td></td>";
     }
     echo "<td></td>";
 }
 
-echo '</tbody></table></div><a href="index.php?page=addOneRowFromTable&name='.$_GET["name"].'"><button type="button" class="btn btn-success">Add</button></a>';
+echo '</tbody></table></div><a href="index.php?page=addOneRowFromTable&name='.$_GET["name"].'"><button type="button" class="btn btn-success">Ajouter</button></a>';
 ?>

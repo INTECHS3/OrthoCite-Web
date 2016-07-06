@@ -21,5 +21,5 @@ echo '<tr><form method="POST" action="index.php?page=updateOneRowFromTable&name=
         if($e == 0) echo "<td>ID : ".$_GET['id']."</td>";
         else echo '<td><input type="text" name="data['.($e-1).']" value="'.$reqSelect[$e].'"></td>';
     }                                    
-echo '<td><input type="submit" class="btn btn-success" value="Update"></td></tr></tbody></table>';                                    
+echo '<td><input type="submit" class="btn btn-success" value="Mettre à jour"></td></tr></tbody></table>';                                    
 ?>

@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-6 credits_left">
                     <p>
-                        &copy;  2016 | <a href="index.php"> OrthoCité </a>| Projet <a href="https://www.intechinfo.fr/">IN'TECH</a> S3 ingénierie logiciel
+                        &copy;  2016 | <a href="index.php"> OrthoCité </a>| Projet <a href="https://www.intechinfo.fr/">IN'TECH</a> S3 ingénierie logicielle
                     </p>
                 </div>
 

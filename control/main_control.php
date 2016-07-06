@@ -32,8 +32,8 @@ function printDifferentGame($difXmlGame)
                         <td>'.$value.'</td>
                         <td>
                             <a href="index.php?page=addWord&action=addInTheGame&name='.$key.'"><button type="button" class="btn btn-success">Ajouter</button></a>
-                            <a href="index.php?page=addWord&action=viewWord&name='.$key.'&valid=1"><button type="button" class="btn btn-default">Mots Validés</button></a>
-                            <a href="index.php?page=addWord&action=viewWord&name='.$key.'&valid=0"><button type="button" class="btn btn-warning">Mots en Attentes</button></a>
+                            <a href="index.php?page=addWord&action=viewWord&name='.$key.'&valid=1"><button type="button" class="btn btn-default">Mots validés</button></a>
+                            <a href="index.php?page=addWord&action=viewWord&name='.$key.'&valid=0"><button type="button" class="btn btn-warning">Mots en attente</button></a>
                         </td>
               </tr>';
     }
@@ -398,24 +398,24 @@ function printFormForAddInGame($name)
                         <option>4</option>
                      </select>
                      </br>
-                     <label>Nombre de porte </label>
+                     <label>Nombre de portes </label>
                     <select class="form-control" name="porte">
                         <option>2</option>
                         <option>3</option>
                      </select>
                      </br>
                     <div class="form-group has-success">          
-                    <label>Mot Valide</label>
+                    <label>Mot valide</label>
                     <input id="inputSuccess" class="form-control" name="word_valid">
                     </div>    
                     <div class="form-group has-error">        
-                    <label>Mot InValide 1</label>
+                    <label>Mot invalide 1</label>
                     <input id="inputError"class="form-control" name="word_invalid_1">
                     </br>           
-                    <label>Mot InValide 2</label>
+                    <label>Mot invalide 2</label>
                     <input id="inputError"class="form-control" name="word_invalid_2">
                     </div>
-                    <p class="help-block">Optionnel si vous choisissez 2 portes</p>
+                    <p class="help-block">Optionnel si vous choisissez 2 portes.</p>
                     
                 ';
             break;
@@ -430,21 +430,21 @@ function printFormForAddInGame($name)
                      </select>
                      </br>
                      <div class="form-group has-success">   
-                     <label>Mot Valide</label>
+                     <label>Mot valide</label>
                     <input id="inputSuccess" class="form-control" name="word_valid">
                     </div>  
                     </br>           
                     <div class="form-group has-error">
-                    <label>Mot InValide 1</label>
+                    <label>Mot invalide 1</label>
                     <input id="inputError" class="form-control" name="word_invalid_1">
                     </br>           
-                    <label>Mot InValide 2</label>
+                    <label>Mot invalide 2</label>
                     <input id="inputError" class="form-control" name="word_invalid_2">
                     </br>           
-                    <label>Mot InValide 3</label>
+                    <label>Mot invalide 3</label>
                     <input id="inputError" class="form-control" name="word_invalid_3">
                     </br>           
-                    <label>Mot InValide 4</label>
+                    <label>Mot invalide 4</label>
                     <input id="inputError" class="form-control" name="word_invalid_4">
                     </br>   
                     </div>
@@ -471,39 +471,39 @@ function printFormForAddInGame($name)
                 <label>Mot</label>
                     <input class="form-control" name="word">
                     </br> 
-                    <label>Vrai ou Faux</label>
+                    <label>Orthographe</label>
                     <select class="form-control" name="validornot">
-                        <option value="true">Vrai</option>
-                        <option value="false">Faux</option>
+                        <option value="true">Valide</option>
+                        <option value="false">Invalide</option>
                      </select>
                      </br>';
             break;
         case 'stopgame':
             echo '<div class="col-lg-3">
             <div class="form-group has-error">
-                <label>Mot Invalide</label>
+                <label>Mot invalide</label>
                 <input id="inputError" class="form-control" name="word_invalid">
                 </br> 
-                <label>Terminaison Mot Invalide</label>
+                <label>Terminaison mot invalide</label>
                 <input id="inputError" class="form-control" name="term_word_invalid"></div></div>
                 <div class="col-lg-3">
                 <div class="form-group has-success">
-                <label>Mot Valide 1</label>
+                <label>Mot valide 1</label>
                 <input id="inputSuccess" class="form-control" name="word_valid_1">
                 </br> 
-                <label>Terminaison Mot Valide 1</label>
+                <label>Terminaison mot valide 1</label>
                 <input id="inputSuccess" class="form-control" name="term_word_valid_1">
                 </br>
-                <label>Mot Valide 2</label>
+                <label>Mot valide 2</label>
                 <input id="inputSuccess" class="form-control" name="word_valid_2">
                 </br> 
-                <label>Terminaison Mot Valide 2</label>
+                <label>Terminaison mot valide 2</label>
                 <input id="inputSuccess" class="form-control" name="term_word_valid_2">
                 </br>
-                <label>Mot Valide 3</label>
+                <label>Mot valide 3</label>
                 <input id="inputSuccess" class="form-control" name="word_valid_3">
                 </br> 
-                <label>Terminaison Mot Valide 3</label>
+                <label>Terminaison mot valide 3</label>
                 <input id="inputSuccess" class="form-control" name="term_word_valid_3"></div></div>
                 </br>
                     ';
@@ -513,10 +513,10 @@ function printFormForAddInGame($name)
                 <label>Mot</label>
                     <input class="form-control" name="word">
                     </br> 
-                    <label>Vrai ou Faux</label>
+                    <label>Orthographe</label>
                     <select class="form-control" name="validornot">
-                        <option value="true">Vrai</option>
-                        <option value="false">Faux</option>
+                        <option value="true">Valide</option>
+                        <option value="false">Invalide</option>
                      </select>
                      </br>';
             break;
@@ -763,9 +763,9 @@ function lookWords($name, $valid, $difXmlGame)
         echo '<thead>
                 <tr>
                     <th>ID</th>
-                    <th>Mot Valide</th>
-                    <th>Mot Invalide 1 </th>
-                    <th>Mot Invalide 2</th>
+                    <th>Mot valide</th>
+                    <th>Mot invalide 1 </th>
+                    <th>Mot invalide 2</th>
                     <th>Portes</th>
                     <th>Quartier</th>
                  </tr>
@@ -807,11 +807,11 @@ function lookWords($name, $valid, $difXmlGame)
         echo '<thead>
                 <tr>
                     <th>ID</th>
-                    <th>Mot Valide</th>
-                    <th>Mot Invalide 1 </th>
-                    <th>Mot Invalide 2</th>
-                    <th>Mot Invalide 3</th>
-                    <th>Mot Invalide 4</th>
+                    <th>Mot valide</th>
+                    <th>Mot invalide 1 </th>
+                    <th>Mot invalide 2</th>
+                    <th>Mot invalide 3</th>
+                    <th>Mot invalide 4</th>
                     <th>Quartier</th>
                  </tr>
                </thead><tbody>';
@@ -890,10 +890,10 @@ function lookWords($name, $valid, $difXmlGame)
         echo '<thead>
                 <tr>
                     <th>ID</th>
-                    <th>Mot Invalide - Terminaison</th>
-                    <th>Mot Valide 1 - Terminaison</th>
-                    <th>Mot Valide 2 - Terminaison</th>
-                    <th>Mot Valide 3 - Terminaison</th>
+                    <th>Mot invalide - terminaison</th>
+                    <th>Mot valide 1 - terminaison</th>
+                    <th>Mot valide 2 - terminaison</th>
+                    <th>Mot valide 3 - terminaison</th>
                  </tr>
                </thead><tbody>';
 
@@ -919,7 +919,7 @@ function lookWords($name, $valid, $difXmlGame)
                 <tr>
                     <th>ID</th>
                     <th>Mot</th>
-                    <th>Valide ou Non</th>
+                    <th>Validité</th>
                  </tr>
                </thead><tbody>';
 

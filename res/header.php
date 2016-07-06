@@ -34,7 +34,7 @@
                                 <!-- Brand and toggle get grouped for better mobile display -->
                                 <div class="navbar-header">
                                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="sr-only">Changer</span>
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
@@ -47,8 +47,8 @@
                                 <div style="height: 1px;" class="main_nav navbar-collapse navbar-ex1-collapse collapse">
                                     <ul class="navigation menu">
                                         <li><a href="#to_the_top">Accueil</a></li>
-                                        <li><a href="#main_center">Qu'es que c'est ?</a></li>
-                                        <li><a href="#main_bottom">Developpeurs</a></li>
+                                        <li><a href="#main_center">Qu'est-ce que c'est ?</a></li>
+                                        <li><a href="#main_bottom">Développeurs</a></li>
                                         <li><a href="index.php?page=addWord">Ajouter des mots au jeu<i class="icon-external-link"></i></a></li>
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
@@ -90,7 +90,7 @@
                                     <li class="slider_item text-align-center">
                                         <div style="padding:140px 0 40px 0">
                                             <center><img src="res/img/icone.png" alt="screen" class="img-responsive" width="25%"/></center>
-                                            <h1 class="hero">ORTHOCITE<span class="colored">.</span></h1>
+                                            <h1 class="hero">ORTHOCITÉ<span class="colored">.</span></h1>
                                             <p class="lead">Un vrai jeu d'orthographe !</p>
                                         </div>
                                         <img src="res/img/sample_screen.png" alt="screen" class="img-responsive"/>
