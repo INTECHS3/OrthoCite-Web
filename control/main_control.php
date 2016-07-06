@@ -328,7 +328,14 @@ function throwgame()
     while($data = $req->fetch())
     {
         $word[$count] = $dom->createElement('word', $data['word']);
-        $word[$count]->setAttribute('typeWorld', $data['validornot']);
+        if($data['validornot'] == 0)
+        {
+        $word[$count]->setAttribute('typeWorld', 'false']);
+        }
+        else
+        {
+        $word[$count]->setAttribute('typeWorld', 'true');
+        }
         $district->appendChild($word[$count]);
         $count++;
     }
