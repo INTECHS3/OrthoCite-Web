@@ -170,9 +170,11 @@ function guessGame()
     $count = 0;
     $dictionary = $dom->createElement('dictionary');
     $district = $dom->createElement('district');
+    $dictionary->appendChild($district);
     $dom->appendChild( $dictionary );
     while($data = $req->fetch())
     {
+
         $sentence[$count] = $dom->createElement('sentence');
         $district->appendChild($sentence[$count]);
         if($data['validornot'] == 0)
@@ -339,10 +341,11 @@ function throwgame()
     $dictionary->appendChild($district);
     while($data = $req->fetch())
     {
+
         $word[$count] = $dom->createElement('word', $data['word']);
         if($data['validornot'] == 0)
         {
-            $word[$count]->setAttribute('typeWorld', 'false']);
+            $word[$count]->setAttribute('typeWorld', 'false');
         }
         else
         {
