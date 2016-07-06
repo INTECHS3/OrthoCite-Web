@@ -169,10 +169,12 @@ function guessGame()
     $sentence = array();
     $count = 0;
     $dictionary = $dom->createElement('dictionary');
+    $district = $dom->createElement('district');
     $dom->appendChild( $dictionary );
     while($data = $req->fetch())
     {
         $sentence[$count] = $dom->createElement('sentence');
+        $district->appendChild($sentence[$count]);
         if($data['validornot'] == 0)
         {
             $sentence[$count]->appendChild($dom->createElement('invalid', $data['word']));
