@@ -379,22 +379,22 @@ function stopgame()
         $wordValid1[$count] = $dom->createElement('word', $data['word_valid_1']);
         $wordValid1[$count]->setAttribute('typeWorld', 'true');
         $wordValid1[$count]->setAttribute('term', $data['term_word_valid_1']);
-        $district->appendChild($wordValid1[$count]);
+        $group[$count]->appendChild($wordValid1[$count]);
 
         $wordValid2[$count] = $dom->createElement('word', $data['word_valid_2']);
         $wordValid2[$count]->setAttribute('typeWorld', 'true');
         $wordValid2[$count]->setAttribute('term', $data['term_word_valid_2']);
-        $district->appendChild($wordValid2[$count]);
+        $group[$count]->appendChild($wordValid2[$count]);
 
         $wordValid3[$count] = $dom->createElement('word', $data['word_valid_3']);
         $wordValid3[$count]->setAttribute('typeWorld', 'true');
         $wordValid3[$count]->setAttribute('term', $data['term_word_valid_3']);
-        $district->appendChild($wordValid3[$count]);
+        $group[$count]->appendChild($wordValid3[$count]);
 
         $wordInvalid[$count] = $dom->createElement('word', $data['word_invalid']);
         $wordInvalid[$count]->setAttribute('typeWorld', 'true');
         $wordInvalid[$count]->setAttribute('term', $data['term_word_invalid']);
-        $district->appendChild($wordInvalid[$count]);
+        $group[$count]->appendChild($wordInvalid[$count]);
         $count++;
 
     }
