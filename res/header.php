@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Slick - A one page HTML template for coding teams</title>
+    <title>| OrthoCité | Accueil </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Le Grand CSS -->
     <link href="res/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -46,9 +46,10 @@
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div style="height: 1px;" class="main_nav navbar-collapse navbar-ex1-collapse collapse">
                                     <ul class="navigation menu">
-                                        <li><a href="#to_the_top">Acceuil</a></li>
-                                        <li><a href="index.php?page=test">Services</a></li>
-                                        <li><a href="index.php?page=test">Ajouter des mots au jeu<i class="icon-external-link"></i></a></li>
+                                        <li><a href="#to_the_top">Accueil</a></li>
+                                        <li><a href="#main_center">Qu'es que c'est ?</a></li>
+                                        <li><a href="#main_bottom">Developpeurs</a></li>
+                                        <li><a href="index.php?page=addWord">Ajouter des mots au jeu<i class="icon-external-link"></i></a></li>
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
                             </div>
@@ -88,6 +89,7 @@
                                     <!-- Slide 2 -->
                                     <li class="slider_item text-align-center">
                                         <div style="padding:140px 0 40px 0">
+                                            <center><img src="res/img/icone.png" alt="screen" class="img-responsive" width="25%"/></center>
                                             <h1 class="hero">ORTHOCITE<span class="colored">.</span></h1>
                                             <p class="lead">Un vrai jeu d'orthographe !</p>
                                         </div>

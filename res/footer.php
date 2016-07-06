@@ -1,6 +1,28 @@
 <?php
 
 ?>
+
+<!-- Loads template specific footer section -->
+<!-- ##################################################### CREDITS AREA STARTS HERE ##################################################### -->
+<div class="joobstrap_section sourrounding_wrapper" id="credits">
+    <div class="inner_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 credits_left">
+                    <p>
+                        &copy;  2016 | <a href="index.php"> OrthoCité </a>| Projet <a href="https://www.intechinfo.fr/">IN'TECH</a> S3 ingénierie logiciel
+                    </p>
+                </div>
+
+                <div class="col-md-6 credits_right">
+                    <p class="back_to_the_top text-align-right"><a href="#to_the_top" id="back-top"><i class="icon-circle-arrow-up icon-white"></i> Revenir en haut</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##################################################### CREDITS AREA ENDS HERE ##################################################### -->
+</div>
 <!-- **************************************** Loading the JS stuff **************************************** -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="res/js/jquery.min.js"></script>
