@@ -71,7 +71,7 @@ else $connected = false;
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">Changer</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -91,13 +91,13 @@ else $connected = false;
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> DashBoard</a>
+                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="../index.php?page=addWord"><i class="fa fa-home fa-fw"></i> Retour à l'accueil</a>
                         </li>   
                         <?php if($connected) echo'<li>
-                            <a href="index.php?page=deco"><i class="fa fa-sign-in fa-fw"></i> Deconnection</a>
+                            <a href="index.php?page=deco"><i class="fa fa-sign-in fa-fw"></i> Déconnexion</a>
                             </li>';
                             ?>
                     </ul>

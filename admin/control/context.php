@@ -36,7 +36,7 @@
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">Tout les mots en attente de validation</span>
+                                <span class="pull-left">Tous les mots en attente de validation</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -53,7 +53,7 @@ if($connected)
                             if(isset($_GET["success"])) {
                             echo "<div class=\"alert alert-success alert-dismissable\">
                                                 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>
-                                                <center>Action Effectué</center>
+                                                <center>Action effectuée</center>
                                                 </div>";
                             }
                          if(isset($_GET["page"]))

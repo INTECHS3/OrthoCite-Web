@@ -4,7 +4,7 @@ echo '<table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name</th>
+                                            <th>Nom</th>
                                             <th>Action</th>
                                             
                                         </tr>
@@ -18,14 +18,14 @@ while ($query = $req->fetch())
                                             <td>'.$i++.'</td>
                                             <td>'.$query[0].'</td>
                                             <td>
-                                                <a href="?page=ViewTable&name='.$query[0].'"><button type="button" class="btn btn-success">View</button></a>
+                                                <a href="?page=ViewTable&name='.$query[0].'"><button type="button" class="btn btn-success">Voir</button></a>
                                            </td>
                                            
         </tr>';
 
 }
 if($i == 1) echo '<tr>
-                                            <td>Aucune Table</td>
+                                            <td>Aucune table</td>
                                             <td></td>
                                             <td>
                                            </td>
