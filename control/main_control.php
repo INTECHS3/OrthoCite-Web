@@ -158,6 +158,8 @@ function doorGame2()
         
         $count++;
     }
+    $xml = $dom->saveXML();
+    return $xml;
 }
 
 function guessGame()
@@ -181,6 +183,8 @@ function guessGame()
         }
         $count++;
     }
+    $xml = $dom->saveXML();
+    return $xml;
 }
 
 function platformer()
@@ -248,6 +252,8 @@ function platformer()
         
         $count++;
     }
+    $xml = $dom->saveXML();
+    return $xml;
 }
 
 function rearranger()
@@ -300,6 +306,8 @@ function rearranger()
         
         $count++;
     }
+    $xml = $dom->saveXML();
+    return $xml;
 }
 
 function superboss()
@@ -313,6 +321,8 @@ $req = ConnectBdd()->query("SELECT * FROM superboss WHERE valid = 1");
     {
         $dictionary->appendChild($dom->createElement('word', $data['word']));
     }
+    $xml = $dom->saveXML();
+    return $xml;
 }
 
 function throwgame()
@@ -332,6 +342,8 @@ function throwgame()
         $district->appendChild($word[$count]);
         $count++;
     }
+    $xml = $dom->saveXML();
+    return $xml;
 }
 function stopgame()
 {
@@ -354,26 +366,28 @@ function stopgame()
         $district->appendChild($group[$supp]);
         $wordValid1[$count] = $dom->createElement('word', $data['word_valid_1']);
         $wordValid1[$count]->setAttribute('typeWorld', 'true');
-        $wordValid1[$count]->setAttribute('term', $data['term_word_valid_1'])
+        $wordValid1[$count]->setAttribute('term', $data['term_word_valid_1']);
         $district->appendChild($wordValid1[$count]);
 
         $wordValid2[$count] = $dom->createElement('word', $data['word_valid_2']);
         $wordValid2[$count]->setAttribute('typeWorld', 'true');
-        $wordValid2[$count]->setAttribute('term', $data['term_word_valid_2'])
+        $wordValid2[$count]->setAttribute('term', $data['term_word_valid_2']);
         $district->appendChild($wordValid2[$count]);
 
         $wordValid3[$count] = $dom->createElement('word', $data['word_valid_3']);
         $wordValid3[$count]->setAttribute('typeWorld', 'true');
-        $wordValid3[$count]->setAttribute('term', $data['term_word_valid_3'])
+        $wordValid3[$count]->setAttribute('term', $data['term_word_valid_3']);
         $district->appendChild($wordValid3[$count]);
 
         $wordInvalid[$count] = $dom->createElement('word', $data['word_invalid']);
         $wordInvalid[$count]->setAttribute('typeWorld', 'true');
-        $wordInvalid[$count]->setAttribute('term', $data['term_word_invalid'])
+        $wordInvalid[$count]->setAttribute('term', $data['term_word_invalid']);
         $district->appendChild($wordInvalid[$count]);
         $count++;
 
     }
+    $xml = $dom->saveXML();
+    return $xml;
 }
 
 function printFormForAddInGame($name)
